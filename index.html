@@ -27,58 +27,22 @@
         <!-- Feed de mídia -->
         <div id="feed" class="list-group d-none"></div>
     </div>
-    
+    <script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('ServiceWorker registrado com sucesso:', registration);
+      })
+      .catch((error) => {
+        console.log('Falha ao registrar o ServiceWorker:', error);
+      });
+  });
+}
+</script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registrado com sucesso:', registration);
-        })
-        .catch(error => {
-          console.log('Falha ao registrar o Service Worker:', error);
-        });
-    });
-  }
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Impede que o navegador mostre a barra de instalação automaticamente
-  e.preventDefault();
-  // Armazena o evento para que ele possa ser acionado posteriormente
-  deferredPrompt = e;
-  // Atualiza a interface do usuário para informar que a PWA pode ser instalada
-  showInstallPromotion();
-});
-
-// Mostra uma interface personalizada para solicitar a instalação
-function showInstallPromotion() {
-  // Mostrar um botão ou banner para permitir que o usuário instale o PWA
-  const installButton = document.getElementById('installButton');
-  installButton.style.display = 'block';
-
-  installButton.addEventListener('click', () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((result) => {
-        if (result.outcome === 'accepted') {
-          console.log('Usuário aceitou o prompt de instalação');
-        } else {
-          console.log('Usuário rejeitou o prompt de instalação');
-        }
-        deferredPrompt = null;
-      });
-    }
-  });
-}
-
-window.addEventListener('appinstalled', (evt) => {
-  console.log('PWA foi instalada');
-});
-</script>
 </body>
 </html>
