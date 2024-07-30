@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117; /* Fundo escuro */
+    color: #e0e0e0; /* Cor do texto clara */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    background-color: #161b22; /* Fundo escuro para os itens do feed */
+    color: #e0e0e0; /* Cor do texto clara nos itens do feed */
+    margin-bottom: 20px;
+    border: 1px solid #333; /* Borda mais escura para os itens */
+    transition: background-color 0.3s ease; /* Suavizar a transição de fundo */
+}
+
+.list-group-item:hover, .list-group-item:focus {
+    background-color: #1f2937; /* Cor de fundo escura e consistente ao passar o cursor */
+    color: #e0e0e0; /* Manter a cor do texto clara */
+    outline: none; /* Remover o contorno padrão do foco */
+}
+
+img, video, audio {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.timestamp {
+    font-size: 0.9em;
+    color: #777; /* Cor do timestamp ajustada para melhor contraste */
+}
+
+a {
+    text-decoration: none;
+    color: #58a6ff; /* Cor dos links */
+    display: block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#loading {
+    margin-top: 20px;
+}
