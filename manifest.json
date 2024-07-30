@@ -2,7 +2,7 @@
   "name": "Midia Digital System",
   "short_name": "System Midia",
   "description": "aplicativo midia digital",
-  "start_url": "/",
+  "start_url": "https://nickolasbressy.github.io/Midia-Digital",
   "display": "standalone",
   "background_color": "#0d1117",
   "theme_color": "#000000",
