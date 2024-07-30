@@ -1,7 +1,7 @@
 {
   "name": "Midia System Digital",
   "short_name": "MidiaDigitalSystem",
-  "description": "Aplicativo para visualização de anucios da mídia digital.",
+  "description": "Aplicativo para visualização de anúncios da mídia digital.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d1117",
@@ -18,6 +18,10 @@
       "type": "image/png"
     }
   ],
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "related_applications": [],
   "id": "midiadigital",
   "categories": [
     "productivity"
